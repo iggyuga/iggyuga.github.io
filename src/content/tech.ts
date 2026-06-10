@@ -3,7 +3,7 @@ import {
   siTypescript,
   siNextdotjs,
   siTailwindcss,
-  siCsharp,
+  siSharp,
   siDotnet,
   siPython,
   siNodedotjs,
@@ -12,7 +12,7 @@ import {
   siDocker,
   siSqlite,
   siGit,
-  siVisualstudiocode,
+  siGithub,
   siDiscord,
   siRaspberrypi,
 } from 'simple-icons'
@@ -40,7 +40,7 @@ export const techGroups: TechGroup[] = [
   {
     label: 'Backend',
     items: [
-      { name: 'C#', path: siCsharp.path },
+      { name: 'C#', path: siSharp.path },
       { name: '.NET', path: siDotnet.path },
       { name: 'Python', path: siPython.path },
       { name: 'Node.js', path: siNodedotjs.path },
@@ -59,7 +59,7 @@ export const techGroups: TechGroup[] = [
     label: 'Tools',
     items: [
       { name: 'Git', path: siGit.path },
-      { name: 'VS Code', path: siVisualstudiocode.path },
+      { name: 'GitHub', path: siGithub.path },
       { name: 'Discord', path: siDiscord.path },
       { name: 'Raspberry Pi', path: siRaspberrypi.path },
     ],
