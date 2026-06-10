@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* ── Design tokens ── */
+:root {
+  --bg: #0a0a0c;
+  --surface: #141416;
+  --surface-raised: #1e1e21;
+  --accent: #e8813a;
+  --accent-muted: rgba(232, 129, 58, 0.12);
+  --fg: #e2e2dc;
+  --muted: #72726e;
+  --border: #27272a;
+  --border-raised: #3a3a3e;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f8f8f6;
+    --surface: #eeeeed;
+    --surface-raised: #e4e4e2;
+    --accent: #d4681e;
+    --accent-muted: rgba(212, 104, 30, 0.1);
+    --fg: #1a1a18;
+    --muted: #6b6b67;
+    --border: #ddddd8;
+    --border-raised: #ccccca;
+  }
+}
+
+/* Expose CSS variables as Tailwind utilities */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-raised: var(--border-raised);
+
+  --font-family-ui: 'Inter', system-ui, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ── Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-family-ui);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Focus rings ── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-raised);
+  border-radius: 3px;
+}
