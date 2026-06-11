@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
-import { ArrowDown, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
 
-const STATS = '10 yrs of code · Sprinter 4x4 · 0 desks'
+const STATS = '10 yrs of code · van lifer';
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -25,7 +25,7 @@ export default function Hero() {
     <section
       id="hero"
       aria-label="Introduction"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative flex items-center justify-center overflow-hidden"
     >
       {/* Subtle radial gradient background */}
       <div
@@ -37,7 +37,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-[1100px] mx-auto px-6 py-32 w-full">
+      <div className="relative z-10 max-w-[1100px] mx-auto px-6 pt-40 pb-28 w-full">
         <motion.div
           variants={container}
           initial="hidden"
@@ -62,8 +62,8 @@ export default function Hero() {
             variants={item}
             className="text-xl text-muted leading-relaxed mb-4 max-w-lg"
           >
-            Full-stack engineer. Ten years in. Currently somewhere in the Southeast
-            with good-enough cell signal.
+            Full-stack engineer. Ten years in. Weekdays: shipping software.
+            Weekends: somewhere in the woods with a van I built myself.
           </motion.p>
 
           <motion.p
@@ -102,21 +102,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll nudge */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        aria-hidden="true"
-      >
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
-        >
-          <ArrowDown size={18} className="text-muted/40" />
-        </motion.div>
-      </motion.div>
     </section>
   )
 }

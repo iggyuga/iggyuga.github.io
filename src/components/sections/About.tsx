@@ -5,8 +5,8 @@ import { meta } from '../../content/meta'
 
 const PARAGRAPHS = [
   "I've been writing software for ten years — TypeScript and React on the front end, C# and .NET on the back end, with enough Python to get into trouble in between. I like systems that hold up under pressure and code that's honest about what it's doing.",
-  "Home base is Chattanooga, TN, which is a loose way of saying my 2022 Sprinter 4x4 is usually within a few hours of there. I work remote, hike when the trail's good, kayak when the river cooperates, and have at least one Raspberry Pi running something at any given moment.",
-  "I'm not looking for a job — I have one I like. This site exists because it's nice to have a corner of the internet that's actually yours. If you stumbled here and want to talk code, options, van builds, or anything else: my email's below.",
+  "I'm based in Chattanooga, TN — good trails nearby, river runs through town. Weekdays I'm heads-down on software; weekends I'm usually somewhere in the woods or on the water. I built out a van for it — insulation, electrical, bed platform, the whole thing — so I can get deep into a trip without roughing it too hard. Have at least one Raspberry Pi running something at any given moment.",
+  "I'm not looking for a job — I have one I like. This site exists because it's nice to have a corner of the internet that's actually yours. If you want to talk code, van builds, options, or anything else: email's below.",
 ]
 
 const reveal = {

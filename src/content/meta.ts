@@ -7,6 +7,6 @@ export const meta = {
   avatar: 'https://github.com/iggyuga.png',
   github: 'https://github.com/iggyuga',
   email: 'iggy.uga@gmail.com',
-  // TODO: add LinkedIn URL
-  linkedin: 'https://linkedin.com/in/iggyuga',
+  // TODO: confirm this slug is correct
+  linkedin: 'https://linkedin.com/in/ignaciorosas',
 } as const

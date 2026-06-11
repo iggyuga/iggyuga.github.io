@@ -14,8 +14,8 @@ const CARDS = [
   },
   {
     emoji: '🚐',
-    title: 'Van life',
-    body: 'The Sprinter is the office, the bedroom, and the project. Currently running a Raspberry Pi weather station and a few home-automation scripts that make no sense for a vehicle but bring me joy.',
+    title: 'Van build',
+    body: 'I built it out myself — insulation, 12V electrical, bed platform, the full conversion. It\'s the weekend rig: load up Friday, find a trailhead, stay out as long as the forecast cooperates. Also an ongoing tinkering project with a Raspberry Pi and more automation than a vehicle probably needs.',
   },
   {
     emoji: '📈',

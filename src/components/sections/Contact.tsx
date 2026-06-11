@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Github, Mail } from 'lucide-react'
+import { Github, Linkedin, Mail } from 'lucide-react'
 import SectionLabel from '../ui/SectionLabel'
 import { meta } from '../../content/meta'
 
@@ -16,13 +16,12 @@ const LINKS = [
     href: meta.github,
     display: 'github.com/iggyuga',
   },
-  // TODO: add LinkedIn once URL is confirmed
-  // {
-  //   icon: Linkedin,
-  //   label: 'LinkedIn',
-  //   href: meta.linkedin,
-  //   display: 'linkedin.com/in/iggyuga',
-  // },
+  {
+    icon: Linkedin,
+    label: 'LinkedIn',
+    href: meta.linkedin,
+    display: 'linkedin.com/in/ignaciorosas', // TODO: confirm slug
+  },
 ]
 
 const reveal = {
