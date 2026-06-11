@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Mail } from 'lucide-react'
+import { ArrowDown, Mail } from 'lucide-react'
 
 const STATS = '10 yrs of code · van lifer';
 
