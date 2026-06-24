@@ -44,7 +44,7 @@ export default function Contact() {
 
           <div className="max-w-lg">
             <motion.p variants={reveal} className="text-muted leading-relaxed mb-8">
-              Best way to reach me is email. I check it, I respond, I don't bite.
+              Best way to reach me is email. I check it, I respond.
             </motion.p>
 
             <motion.ul variants={reveal} className="space-y-4" role="list">
