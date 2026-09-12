@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Head
         title="Iggy — Full-Stack Engineer"
-        description="Full-stack engineer in Chattanooga, TN. I build web apps, automate things, and occasionally let a robot trade my account."
+        description="Senior full-stack software engineer in Chattanooga, TN. I build web apps, automate things, and occasionally let a robot trade my account."
       />
       <Hero />
       <About />

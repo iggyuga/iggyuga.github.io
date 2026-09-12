@@ -111,6 +111,80 @@ export const projects: Project[] = [
       ],
     },
   },
+  {
+    slug: 'reclaim',
+    title: 'reclaim',
+    pitch:
+      'Membership revenue OS for Discord communities — unifies paid-member state across Patreon and Stripe, recovers failed payments, and flags churn risk before it cancels.',
+    tags: ['TypeScript', 'Next.js', 'Prisma', 'Postgres', 'BullMQ', 'Stripe', 'Discord'],
+    repoUrl: 'https://github.com/iggyuga/reclaim',
+    gradient: 'from-indigo-900/40 to-sky-900/30',
+    meta: {
+      role: 'Solo — architecture, build, deploy',
+      timeframe: '2026 – present',
+      stack: [
+        'TypeScript',
+        'Next.js',
+        'discord.js',
+        'Prisma',
+        'Postgres',
+        'Redis',
+        'BullMQ',
+        'Stripe API',
+        'Patreon API',
+        'Zod',
+        'Railway',
+      ],
+    },
+    caseStudy: {
+      problem:
+        'Creators running paid Discord communities bleed revenue they never see. A member\'s card fails and they silently lose their role. Someone drifts off for three weeks before cancelling and nobody notices until the charge stops. Paid state is scattered across Patreon, Stripe, and Discord native subs, and none of those systems agree with each other or tell the owner what retention actually looks like.',
+      approach:
+        'A pnpm monorepo with a provider-agnostic core: webhooks land in the Next.js app, jobs go on a BullMQ queue, workers reconcile member state, and the Discord bot owns every write back to Discord. On top of that sit four retention features — dunning (spaced DMs with a fresh billing-portal link, grace window, then revoke), expiring-card reminders off invoice.upcoming, cancel-save offers while the member still has access, and a nightly win-back sweep for lapsed or high-churn-risk members. Churn risk comes from Discord activity rollups, not message content.',
+      architectureNote:
+        'Webhook receiver (web) → BullMQ queue → workers (reconcile, dunning, activity rollup, win-back) → bot (all Discord writes, rate-limited). Queues carry ids, never payloads, so the worker re-fetches authoritative state from the provider instead of trusting a stale or out-of-order body. Job shapes live in a shared package so producers and consumers cannot drift.',
+      outcome:
+        'Stripe Connect OAuth, Patreon integration, the dunning engine, reconciliation, and the analytics dashboard are built and running against a real database. Entitlements re-pull every six hours so the system never depends on catching a live event.',
+      lessons: [
+        'Money code has to fail safe. The rule throughout: if the system is unsure, do not revoke and do not DM — flag it for the owner. A wrongly revoked role costs more trust than a day of delay.',
+        'Idempotency is a design constraint, not a cleanup task. Every webhook is assumed re-deliverable and out-of-order, so dedupe keys and deterministic job ids went in before any feature did.',
+        'Append-only events pay for themselves twice. The member event log is both the audit trail and the retention funnel — adding a new event type needs no migration, and the dashboard gets it for free.',
+        'Least privilege shapes the product. No Message Content intent, so churn signals come from activity rollups rather than reading what people say. The constraint made the feature simpler, not worse.',
+        'Provider APIs drift under you. Stripe moved the invoice-to-subscription link mid-build; reading both the old and new shape is the only thing that kept webhooks working.',
+      ],
+    },
+  },
+  {
+    slug: 'ricochet',
+    title: 'ricochet',
+    pitch:
+      'A one-thumb aim roguelite for mobile web — bounce, break, upgrade. Shipping on itch.io and Google Play from a single URL.',
+    tags: ['TypeScript', 'Canvas 2D', 'Vite', 'Fastify', 'Railway', 'Google Play'],
+    repoUrl: 'https://github.com/iggyuga/ricochet',
+    gradient: 'from-blue-900/40 to-cyan-900/30',
+    meta: {
+      role: 'Solo — design, code, balance, release',
+      timeframe: '2026 – present',
+      stack: ['TypeScript', 'Canvas 2D', 'Vite', 'Fastify', 'Railway', 'discord.js', 'PWA / TWA'],
+    },
+    caseStudy: {
+      problem:
+        'I wanted a game I could actually play one-handed on a phone — aim, release, watch it bounce — with enough roguelite depth that runs stay different. The hard part is not the shot; it is shipping a real game to real app stores as one person and keeping the balance honest without a QA team.',
+      approach:
+        'Hand-written Canvas 2D renderer and simulation in TypeScript, no engine. Runs are built from layered progression systems — upgrades, perks, augments, pacts, and evolutions — plus a seeded daily run and a leaderboard served by a small Fastify app. The whole thing is a PWA; the Android build is a Trusted Web Activity pointing at the same production URL, so gameplay changes reach Play testers with no new AAB, no upload, and no review.',
+      architectureNote:
+        'Canvas 2D render + simulation core (TypeScript, seeded RNG) → Fastify server for leaderboard and static hosting → Railway deploy → PWA served to the open web, itch.io as a packaged zip, and Google Play via a TWA wrapper over the same URL. A Discord bot handles release and daily-run announcements.',
+      outcome:
+        'Playable on the open web and itch.io, with closed testing live on Google Play. A single deploy updates every surface at once. Monetization is decided but deliberately not built yet: free, with a one-time supporter unlock rather than content gating.',
+      lessons: [
+        'Measure before tuning. Balance claims come from simulation probes, not vibes — but the bot player is much weaker than a strong human, so its numbers describe the bot, not the game. Saying which one you measured matters more than the number.',
+        'Screenshot the canvas. Two bugs shipped that only a rendered image caught: a composite that was mathematically invisible against a near-black background, and white text surviving a color blend. Tests that assert state cannot see what the player sees.',
+        'Derive lists, never duplicate them. Four separate bugs came from two places independently answering the same question — including two bits of code that disagreed about whether a phase was still part of the run, in opposite directions.',
+        'TWA is the cheat code for solo mobile release. Wrapping the live site means store review is a one-time cost instead of a per-update tax; only the native wrapper itself needs a rebuild.',
+        'Caching is the first suspect on mobile. The TWA does not navigate on resume, so backgrounding and returning keeps the old bundle in memory — a fix that looks broken on device is usually a stale cache, not bad code.',
+      ],
+    },
+  },
 ]
 
 export function getProject(slug: string): Project | undefined {
