@@ -1,6 +1,6 @@
 import { useParams, useNavigate, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight } from 'lucide-react'
 import { getProject } from '../content/projects'
 import Head from '../components/ui/Head'
 
@@ -32,7 +32,7 @@ export default function Project() {
 
   if (!project) return <Navigate to="/" replace />
 
-  const { title, pitch, tags, meta, caseStudy } = project
+  const { title, pitch, tags, meta, caseStudy, liveUrl, liveLabel } = project
 
   return (
     <>
@@ -68,6 +68,16 @@ export default function Project() {
                 {title}
               </h1>
               <p className="text-muted text-lg leading-relaxed">{pitch}</p>
+              {liveUrl && (
+                <a
+                  href={liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 mt-5 px-4 py-2 rounded-xl bg-accent text-white font-medium text-sm hover:bg-accent/90 transition-colors"
+                >
+                  {liveLabel ?? 'View live'} <ArrowUpRight size={15} />
+                </a>
+              )}
             </motion.div>
 
             {/* Hero image slot */}

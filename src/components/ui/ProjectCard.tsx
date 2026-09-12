@@ -81,9 +81,9 @@ export default function ProjectCard({ project }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-sm text-muted hover:text-fg transition-colors"
-              aria-label={`${project.title} live site`}
+              aria-label={`${project.title}: ${project.liveLabel ?? 'live site'}`}
             >
-              Live <ArrowUpRight size={14} />
+              {project.liveLabel ?? 'Live'} <ArrowUpRight size={14} />
             </a>
           )}
         </div>

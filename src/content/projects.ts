@@ -4,6 +4,8 @@ export type Project = {
   pitch: string
   tags: string[]
   liveUrl?: string
+  /** Link text for liveUrl. Defaults to "Live". */
+  liveLabel?: string
   repoUrl?: string
   /** Repo is private — keep the URL, but don't render a link that 404s. */
   repoPrivate?: boolean
@@ -166,6 +168,8 @@ export const projects: Project[] = [
     pitch:
       'A one-thumb aim roguelite for mobile web — bounce, break, upgrade. Shipping on itch.io and Google Play from a single URL.',
     tags: ['TypeScript', 'Canvas 2D', 'Vite', 'Fastify', 'Railway', 'Google Play'],
+    liveUrl: 'https://ricochet-production.up.railway.app',
+    liveLabel: 'Play game',
     repoUrl: 'https://github.com/iggyuga/ricochet',
     repoPrivate: true,
     gradient: 'from-blue-900/40 to-cyan-900/30',
