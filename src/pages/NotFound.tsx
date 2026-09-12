@@ -8,7 +8,7 @@ export default function NotFound() {
 
   return (
     <>
-      <Head title="Trail's gone cold — Iggy" />
+      <Head title="Trail's gone cold — Ignacio" />
       <div className="min-h-screen flex items-center justify-center px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

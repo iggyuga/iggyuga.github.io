@@ -1,6 +1,6 @@
 export const meta = {
-  name: 'Iggy',
-  title: 'Iggy — Senior Full-Stack Software Engineer',
+  name: 'Ignacio',
+  title: 'Ignacio — Senior Full-Stack Software Engineer',
   description:
     'Senior full-stack software engineer in Chattanooga, TN. I build web apps, automate things, and occasionally let a robot trade my account.',
   url: 'https://iggyuga.github.io',

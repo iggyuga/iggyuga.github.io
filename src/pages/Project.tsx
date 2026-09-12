@@ -37,7 +37,7 @@ export default function Project() {
   return (
     <>
       <Head
-        title={`${title} — Iggy`}
+        title={`${title} — Ignacio`}
         description={pitch}
       />
       <div className="min-h-screen pt-24 pb-32">

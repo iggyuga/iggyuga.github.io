@@ -55,7 +55,7 @@ export default function Hero() {
             variants={item}
             className="text-6xl sm:text-7xl font-bold text-fg leading-none tracking-tight mb-6"
           >
-            I'm Iggy.
+            I'm Ignacio.
           </motion.h1>
 
           <motion.p

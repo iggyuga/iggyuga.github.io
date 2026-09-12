@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Head
-        title="Iggy — Full-Stack Engineer"
+        title="Ignacio — Senior Full-Stack Software Engineer"
         description="Senior full-stack software engineer in Chattanooga, TN. I build web apps, automate things, and occasionally let a robot trade my account."
       />
       <Hero />

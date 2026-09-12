@@ -52,7 +52,7 @@ export default function About() {
               >
                 <img
                   src={meta.avatar}
-                  alt="Iggy"
+                  alt="Ignacio"
                   className="w-full h-full object-cover"
                   loading="lazy"
                   width={280}
