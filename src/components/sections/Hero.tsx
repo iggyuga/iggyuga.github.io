@@ -62,8 +62,10 @@ export default function Hero() {
             variants={item}
             className="text-xl text-muted leading-relaxed mb-4 max-w-lg"
           >
-            Senior full-stack software engineer. Ten years in. Weekdays: shipping software.
-            Weekends: somewhere in the woods with a van I built myself.
+            Senior full-stack software engineer. Ten years in. In the week, I'm
+            writing code and deploying code. Writing code again and deploying
+            code again until my eyes go cross-eyed. On the weekend, I come alive
+            with my wife as we travel wherever we can in the van I built out.
           </motion.p>
 
           <motion.p
