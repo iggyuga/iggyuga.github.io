@@ -64,7 +64,7 @@ export default function ProjectCard({ project }: Props) {
           >
             Case study <ArrowUpRight size={14} />
           </Link>
-          {project.repoUrl && (
+          {project.repoUrl && !project.repoPrivate && (
             <a
               href={project.repoUrl}
               target="_blank"

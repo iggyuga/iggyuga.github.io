@@ -5,6 +5,8 @@ export type Project = {
   tags: string[]
   liveUrl?: string
   repoUrl?: string
+  /** Repo is private — keep the URL, but don't render a link that 404s. */
+  repoPrivate?: boolean
   gradient: string
   meta: {
     role: string
@@ -28,6 +30,7 @@ export const projects: Project[] = [
       'A robot that watches the market, backtests strategies, and actually executes real trades in my account.',
     tags: ['Python', 'Tradier API', 'SQLite', 'Railway', 'Claude API', 'Discord'],
     repoUrl: 'https://github.com/iggyuga/options-ally',
+    repoPrivate: true,
     gradient: 'from-amber-900/40 to-green-900/30',
     meta: {
       role: 'Solo — design, build, deploy',
@@ -58,6 +61,7 @@ export const projects: Project[] = [
       'A 2D platformer built in Unity — hand-animated cat protagonist, enemy AI with patrol paths, collectibles, and full level design.',
     tags: ['C#', 'Unity', 'ShaderLab', 'HLSL'],
     repoUrl: 'https://github.com/iggyuga/catdad',
+    repoPrivate: true,
     gradient: 'from-purple-900/40 to-pink-900/30',
     meta: {
       role: 'Solo — design, art, code',
@@ -88,6 +92,7 @@ export const projects: Project[] = [
       'A mobile app that scans barcodes, scores nutrition, finds nearby stores, and plans your grocery run on a budget.',
     tags: ['TypeScript', 'React', 'Capacitor', 'Supabase', 'Google Vision', 'Zustand'],
     repoUrl: 'https://github.com/iggyuga/grocery-run',
+    repoPrivate: true,
     gradient: 'from-green-900/40 to-teal-900/30',
     meta: {
       role: 'Solo — design, build, deploy',
@@ -118,6 +123,7 @@ export const projects: Project[] = [
       'Membership revenue OS for Discord communities — unifies paid-member state across Patreon and Stripe, recovers failed payments, and flags churn risk before it cancels.',
     tags: ['TypeScript', 'Next.js', 'Prisma', 'Postgres', 'BullMQ', 'Stripe', 'Discord'],
     repoUrl: 'https://github.com/iggyuga/reclaim',
+    repoPrivate: true,
     gradient: 'from-indigo-900/40 to-sky-900/30',
     meta: {
       role: 'Solo — architecture, build, deploy',
@@ -161,6 +167,7 @@ export const projects: Project[] = [
       'A one-thumb aim roguelite for mobile web — bounce, break, upgrade. Shipping on itch.io and Google Play from a single URL.',
     tags: ['TypeScript', 'Canvas 2D', 'Vite', 'Fastify', 'Railway', 'Google Play'],
     repoUrl: 'https://github.com/iggyuga/ricochet',
+    repoPrivate: true,
     gradient: 'from-blue-900/40 to-cyan-900/30',
     meta: {
       role: 'Solo — design, code, balance, release',
