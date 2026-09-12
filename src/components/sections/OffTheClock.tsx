@@ -5,7 +5,7 @@ const CARDS = [
   {
     emoji: '🥾',
     title: 'Hiking',
-    body: 'Chattanooga is absurdly close to good trails. Cloudland Canyon, Savage Gulf, Pinhoti. I hike most weekends when the weather cooperates, which in the Southeast means not summer afternoons.',
+    body: 'Chattanooga is absurdly close to good trails. Cloudland Canyon, Savage Gulf, Pinhoti. We hike most weekends when the weather cooperates, which in the Southeast means not summer afternoons.',
   },
   {
     emoji: '🛶',
@@ -15,7 +15,7 @@ const CARDS = [
   {
     emoji: '🚐',
     title: 'Van build',
-    body: 'I built it out myself — insulation, 12V electrical, bed platform, the full conversion. It\'s the weekend rig: load up Friday, find a trailhead, stay out as long as the forecast cooperates. Also an ongoing tinkering project with a Raspberry Pi and more automation than a vehicle probably needs.',
+    body: 'I built it out myself — insulation, 12V electrical, bed platform, the full conversion. It\'s the weekend rig: my wife and I load up Friday, find a trailhead, stay out as long as the forecast cooperates. Also an ongoing tinkering project with a Raspberry Pi and more automation than a vehicle probably needs.',
   },
   {
     emoji: '📈',
